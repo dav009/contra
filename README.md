@@ -1,6 +1,5 @@
 ![](https://github.com/dav009/contra/blob/master/logo.gif?raw=true)
-# Contra
- 
+
 Contra es un conjunto de scripts para:  (i) descargar y (ii) extraer informacion de `contratos.gov.co` (Sitio web del gobierno colombiano con informacion contractual)
  
 Tener la informacion contractual en un formato procesable es un requirimiento indispensable para usar los datos en la solucion de problemas (i.e: Deteccion de Corrupcion).
