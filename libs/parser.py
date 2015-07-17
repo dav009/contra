@@ -1,9 +1,10 @@
-
 from lxml.cssselect import CSSSelector
 from lxml import html
 from lxml.html.clean import clean_html
-from lxml.html.clean import clean_html
 
+
+# Extracts fields from contract pages: 
+# i.e: https://www.contratos.gov.co/consultas/detalleProceso.do?numConstancia=15-11-4035910
 class ContractParser:
 
 	def __init__(self, html_content):
@@ -73,8 +74,6 @@ class ContractParser:
 				document = self.extract_doc(td_tags)
 				if document:
 					contract_representation['documents'].append(document)
-
-		print(contract_representation)
 		return contract_representation
 
 
