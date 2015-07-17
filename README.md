@@ -5,7 +5,7 @@ Contra es un conjunto de scripts para:  (i) descargar y (ii) extraer informacion
 Tener la informacion contractual en un formato procesable es un requirimiento indispensable para usar los datos en la solucion de problemas (i.e: Deteccion de Corrupcion).
  
 1. Descarga los contratos de contratos.gov.co (approx 1 millon para Julio 2015)
-2. Extrae del html la informacion sobre los contratos y genera un archivo donde cada entrada es un objeto json
+2. Extrae del html la informacion sobre los contratos y genera un dataset en formato json
  
 Descargar dataset : <Enlace>
  

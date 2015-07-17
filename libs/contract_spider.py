@@ -24,6 +24,7 @@ def worker(pair):
 	print("done.." + str(counter.value))
 
 
+# Downloads a list of links to contract pages
 # main <pathToFileWithContractLinkPerLine> <FolderWhereContractLinksWillBeDownloaded>
 def main(args):
 	file_with_urls = args[0]
