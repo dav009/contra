@@ -8,9 +8,7 @@ from lxml.html.clean import clean_html
 class ContractParser:
 
 	def __init__(self, html_content):
-		print("hola")
 		self.parsed_content = html.fromstring(html_content)
-
 
 	def extract_field(self, list_of_tds):
 		field_name = ""

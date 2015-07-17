@@ -1,7 +1,7 @@
 
 import json
 import os
-from libs.contract import ContractParser
+from contra.contract import ContractParser
 
 fixture_file = os.path.dirname(os.path.abspath(__file__))+ "/fixture.json"
 fixture = json.load(open(fixture_file,'r'))['fixture_1']
