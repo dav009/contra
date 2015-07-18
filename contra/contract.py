@@ -1,7 +1,11 @@
 from lxml.cssselect import CSSSelector
 from lxml import html
 from lxml.html.clean import clean_html
+import multiprocessing
 from multiprocessing import Pool, Value
+from os import listdir
+import json
+import codecs
 
 # Extracts fields from contract pages: 
 # i.e: https://www.contratos.gov.co/consultas/detalleProceso.do?numConstancia=15-11-4035910
@@ -65,7 +69,7 @@ class ContractParser:
 			if(len(td_tags) == 2):
 				field_name, field_value = self.extract_field(td_tags)
 				if field_name and field_value:
-					contract_representation[field_name] = field_value
+					contract_representation[field_name] = field_value		
 
 			# it is one of the linked docs
 			if(len(td_tags) == 6):
@@ -74,11 +78,24 @@ class ContractParser:
 					contract_representation['documents'].append(document)
 		return contract_representation
 
+def parse_contract_page(page_file):
+	f = codecs.open(page_file, 'r', 'utf-8')
+	content = "\n".join(f.readlines())
+	contract = ContractParser(content).parse()
+	f.close()
+	return contract
 
 def create_data_set_from_files(path_to_folder, output):
-	
+	all_files_in_folder = [ path_to_folder + "/" + f for f in listdir(path_to_folder)]
+	pool = multiprocessing.Pool(100)
+	print("parsing page files....")
+	results = pool.map(parse_contract_page, all_files_in_folder)
+	print("exporting json to output file....")
+	output = codecs.open(output, 'w', 'utf-8')
+	for result in results:
+		output.write(json.dumps(result)+"\n")
+	output.close()
 
-	pass
 
 
 

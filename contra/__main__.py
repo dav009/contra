@@ -33,6 +33,7 @@ def main():
 	elif action=="create-dataset":
 		print("Parsing pages in: %s"%(input_arg))
 		print("Saving json dataset in: %s"%(output_arg))
+		contract.create_data_set_from_files(input_arg, output_arg)
 
 
 
