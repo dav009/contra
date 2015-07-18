@@ -7,6 +7,8 @@ from os import listdir
 import json
 import codecs
 
+counter = Value('i', 0)
+
 # Extracts fields from contract pages: 
 # i.e: https://www.contratos.gov.co/consultas/detalleProceso.do?numConstancia=15-11-4035910
 class ContractParser:
@@ -83,6 +85,9 @@ def parse_contract_page(page_file):
 	content = "\n".join(f.readlines())
 	contract = ContractParser(content).parse()
 	f.close()
+	global counter
+	counter.value += 1
+	print("done.." + str(counter.value))
 	return contract
 
 def create_data_set_from_files(path_to_folder, output):
