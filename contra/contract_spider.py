@@ -11,7 +11,7 @@ def worker(pair):
 		result = requests.get(url)
 		if result.status_code == 200:
 			f = codecs.open(output_folder+"/"+(url.replace("/", "_")), 'w', 'utf-8')
-			f.write(result.text.replace("\n", " "))
+			f.write(result.text.replace("\n", " ").replace("\r", " "))
 			f.close()
 			#print("downloaded.." + url)
 		else:
