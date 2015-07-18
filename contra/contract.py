@@ -90,6 +90,26 @@ def parse_contract_page(page_file):
 	print("done.." + str(counter.value))
 	return contract
 
+def remove_new_lines(path_to_folder):
+
+	def convert_to_single_line(file):
+		f = codecs.open(page_file, 'r', 'utf-8')
+		content = " ".join(f.readlines())
+		f.close()
+
+		output = codecs.open(page_file, 'w', 'utf-8')
+		output.write(content+"\n")
+		output.close()
+
+		global counter
+		counter.value += 1
+		print("done.." + str(counter.value))
+
+
+	all_files_in_folder = [ path_to_folder + "/" + f for f in listdir(path_to_folder)]
+	pool = multiprocessing.Pool(100)
+	pool.map(convert_to_single_line, all_files_in_folder)
+
 def create_data_set_from_files(path_to_folder, output):
 	all_files_in_folder = [ path_to_folder + "/" + f for f in listdir(path_to_folder)]
 	pool = multiprocessing.Pool(100)

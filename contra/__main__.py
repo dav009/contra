@@ -34,6 +34,9 @@ def main():
 		print("Parsing pages in: %s"%(input_arg))
 		print("Saving json dataset in: %s"%(output_arg))
 		contract.create_data_set_from_files(input_arg, output_arg)
+	elif action=="create-single-lined-files":
+		print("Parsing pages in: %s"%(input_arg))
+		contract.remove_new_lines(input_arg)
 
 
 
