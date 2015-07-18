@@ -1,6 +1,8 @@
 import requests
 from multiprocessing import Pool, Value
 import codecs
+from contract import ContractParser
+import json
 
 counter = Value('i', 0)
 
@@ -10,8 +12,13 @@ def worker(pair):
 	try:
 		result = requests.get(url)
 		if result.status_code == 200:
-			f = codecs.open(output_folder+"/"+(url.replace("/", "_")), 'w', 'utf-8')
-			f.write(result.text.replace("\n", " ").replace("\r", " "))
+			temporalFolder = counter % 400
+			folder = output_folder+"/"+str(temporalFolder)+"/"
+			if not os.path.exists(folder):
+    			os.makedirs(folder)
+			f = codecs.open(folder + (url.replace("/", "_")), 'w', 'utf-8')
+			contract = ContractParser(result.text).parse()
+			f.write(json.dumps(contract)+"\n")
 			f.close()
 			#print("downloaded.." + url)
 		else:
