@@ -12,7 +12,7 @@ Este script permite:
 
 # Dataset
 
-El dataset de Contratos(Julio 2015) esta disponible para descargar aqui: `<Enlace>`
+El dataset de Contratos(Julio 2015) esta disponible para descargar aqui: [Julio_18_2015 Dataset Torrent](https://github.com/dav009/contra/blob/master/datos_json_contratos_gov_co.torrent?raw=true)
 
 Cada linea del archivo contiene un objecto json. Cada objeto json tiene la siguiente estructura:
 
