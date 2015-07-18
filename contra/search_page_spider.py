@@ -78,4 +78,4 @@ def main(args):
 
 
 # uso [PathToOutputFolder]
-main(["/Users/dav009/source/contra/pages"])
+#main(["/Users/dav009/source/contra/pages"])

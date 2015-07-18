@@ -38,4 +38,4 @@ def main(args):
 	pool.map(worker , urls)
 
 
-main(["data/all_links", "data/contracts/"])
+#main(["data/all_links", "data/contracts/"])

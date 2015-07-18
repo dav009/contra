@@ -1,7 +1,7 @@
 from lxml.cssselect import CSSSelector
 from lxml import html
 from lxml.html.clean import clean_html
-
+from multiprocessing import Pool, Value
 
 # Extracts fields from contract pages: 
 # i.e: https://www.contratos.gov.co/consultas/detalleProceso.do?numConstancia=15-11-4035910
@@ -75,7 +75,10 @@ class ContractParser:
 		return contract_representation
 
 
+def create_data_set_from_files(path_to_folder, output):
+	
 
+	pass
 
 
 
