@@ -20,9 +20,40 @@ Descargar dataset : <Enlace>
 ```
  
 # Detalles
- 
- 1. Los enlaces a los contratos son deconocidos. Primero se descargan los enlaces a los contratos via el API de busqueda
- 2. Se descargan las paginas de los contratos
- 3. Se paresen las paginas de los contratos, generando el dataset
- 4. Limpieza
- 5. yay ^^
+
+### Descargando las paginas de busqueda
+
+Descarga la paginas de busqueda en el directorio especificado en output:
+
+`contra  scrape_searchpages --output <pathToOutputFolder>`
+
+--------------
+
+
+### Extrayendo URLs de contratos de las paginas de busqueda
+
+Extrae las urls de contratos dentro de las paginas de busqueda. Genera una archivo con cada URL de un contrato.
+
+`contra  extract_contracts --input <PathToFolderWithSearchPages> --output <OutputFileWithAllContractURLS>`
+
+--------------
+
+### Descargando las paginas de contratos
+
+Dada un archivo que contiene en cada linea una url a un contrato. Descarga cada contrato en el folder especificado en output.
+
+`contra  scrape_contracts --input <fileWithContractLinks> --output <folderWithContractPages>`
+
+--------------
+
+### Parseando Paginas de contratos (exportar a json)
+
+Convierte cada pagina del folder de entrada (un contrato) a json y lo exporta a un archivo
+
+`contra  create-dataset --input <folderWithContractPages> --output <jsonFileWithContractData>`
+
+
+# Instalando requerimientos
+
+1. `sudo apt-get install libxml2-dev libxslt-dev python-dev zlib1g-dev`
+2. `pip install -r requierements.txt`
