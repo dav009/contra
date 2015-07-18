@@ -18,8 +18,13 @@ Descargar dataset : <Enlace>
   "bla": "bla"
 }
 ```
+
+# Instalando requerimientos
+
+1. `sudo apt-get install libxml2-dev libxslt-dev python-dev zlib1g-dev`
+2. `pip install -r requierements.txt`
  
-# Detalles
+# Running it
 
 ### Descargando las paginas de busqueda
 
@@ -52,8 +57,3 @@ Convierte cada pagina del folder de entrada (un contrato) a json y lo exporta a 
 
 `contra  create-dataset --input <folderWithContractPages> --output <jsonFileWithContractData>`
 
-
-# Instalando requerimientos
-
-1. `sudo apt-get install libxml2-dev libxslt-dev python-dev zlib1g-dev`
-2. `pip install -r requierements.txt`
