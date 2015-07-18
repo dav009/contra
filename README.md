@@ -97,7 +97,9 @@ Dada un archivo que contiene en cada linea una url a un contrato. Descarga cada 
 
 ### Parseando Paginas de contratos (exportar a json)
 
-Convierte cada pagina del folder de entrada (un contrato) a json y lo exporta a un archivo
+Transforma cada pagina del folder de entrada (un contrato) a json
+y genera una lista de archivos json en el path especificado en `output`
 
-`python contra  create-dataset --input <folderWithContractPages> --output <jsonFileWithContractData>`
+`python contra  create-dataset --input <folderWithContractPages> --output <pathTo>`
 
+Los archivos generados pueden ser concatenados via `cat http* >> dataset.json` para generar el dataset final
