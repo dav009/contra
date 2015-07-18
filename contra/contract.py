@@ -82,7 +82,7 @@ class ContractParser:
 
 def parse_contract_page(page_file):
 	f = codecs.open(page_file, 'r', 'utf-8')
-	content = "\n".join(f.readlines())
+	content = " ".join(f.readlines())
 	contract = ContractParser(content).parse()
 	f.close()
 	global counter
