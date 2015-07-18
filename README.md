@@ -6,10 +6,10 @@ Tener la informacion contractual en un formato procesable es un requirimiento in
  
 1. Descarga los contratos de contratos.gov.co (approx 1 millon para Julio 2015)
 2. Extrae del html la informacion sobre los contratos y genera un dataset en formato json
- 
-Descargar dataset : <Enlace>
- 
+
 # Dataset
+
+El dataset de Contratos(Julio 2015) esta disponible para descargar aqui: <Enlace>
 
 Cada linea del archivo contiene un objecto json. Cada objeto json tiene la siguiente estructura:
 
@@ -58,14 +58,7 @@ Cada linea del archivo contiene un objecto json. Cada objeto json tiene la sigui
     "Dirección Física del Contratista": "Avenida Libertadores La Plata"
 }
 ```
- 
-## Estructura
- 
-```json
-{
-  "bla": "bla"
-}
-```
+
 
 # Instalando requerimientos
 
