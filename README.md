@@ -89,17 +89,10 @@ Extrae las urls de contratos dentro de las paginas de busqueda. Genera una archi
 
 ### Descargando las paginas de contratos
 
-Dada un archivo que contiene en cada linea una url a un contrato. Descarga cada contrato en el folder especificado en output.
+Dada un archivo que contiene en cada linea una url a un contrato. Descarga cada contrato, extrae el contenido, y genera un archivo json en el folder especificado en output.
 
-`python contra  scrape_contracts --input <fileWithContractLinks> --output <folderWithContractPages>`
+`python contra  scrape_contracts --input <fileWithContractLinks> --output <folderWithContractJsonPages>`
 
 --------------
-
-### Parseando Paginas de contratos (exportar a json)
-
-Transforma cada pagina del folder de entrada (un contrato) a json
-y genera una lista de archivos json en el path especificado en `output`
-
-`python contra  create-dataset --input <folderWithContractPages> --output <pathTo>`
 
 Los archivos generados pueden ser concatenados via `cat http* >> dataset.json` para generar el dataset final

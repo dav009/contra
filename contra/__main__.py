@@ -43,7 +43,6 @@ def main():
 # contra  scrape_searchpages --output folder
 # contra  extract_contracts --input scrapedSearchPages --output fileWithLinks
 # contra  scrape_contracts --input fileWithContractLinks --output folderWithContractPages
-# contra  create-dataset --input folderWithContractPages --output jsonFileWithContractData
 #
 if __name__ == "__main__":
 	main()

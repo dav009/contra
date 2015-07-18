@@ -3,6 +3,7 @@ from multiprocessing import Pool, Value
 import codecs
 from contract import ContractParser
 import json
+import os
 
 counter = Value('i', 1)
 
@@ -14,7 +15,6 @@ def worker(pair):
 		result = requests.get(url)
 		if result.status_code == 200:
 			temporalFolder = counter.value % 400
-			print("temporal:" + temporalFolder)
 			folder = output_folder+"/"+str(temporalFolder)+"/"
 			f = codecs.open(folder + (url.replace("/", "_")), 'w', 'utf-8')
 			contract = ContractParser(result.text).parse()
