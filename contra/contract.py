@@ -90,7 +90,7 @@ def parse_contract_page(page_file):
 	print("done.." + str(counter.value))
 	return contract
 
-def convert_to_single_line(file):
+def convert_to_single_line(page_file):
 	f = codecs.open(page_file, 'r', 'utf-8')
 	content = " ".join(f.readlines())
 	f.close()
