@@ -74,7 +74,7 @@ Cada linea del archivo contiene un objecto json. Cada objeto json tiene la sigui
 
 Descarga la paginas de busqueda en el directorio especificado en output:
 
-`contra  scrape_searchpages --output <pathToOutputFolder>`
+`python contra  scrape_searchpages --output <pathToOutputFolder>`
 
 --------------
 
@@ -83,7 +83,7 @@ Descarga la paginas de busqueda en el directorio especificado en output:
 
 Extrae las urls de contratos dentro de las paginas de busqueda. Genera una archivo con cada URL de un contrato.
 
-`contra  extract_contracts --input <PathToFolderWithSearchPages> --output <OutputFileWithAllContractURLS>`
+`python contra  extract_contracts --input <PathToFolderWithSearchPages> --output <OutputFileWithAllContractURLS>`
 
 --------------
 
@@ -91,7 +91,7 @@ Extrae las urls de contratos dentro de las paginas de busqueda. Genera una archi
 
 Dada un archivo que contiene en cada linea una url a un contrato. Descarga cada contrato en el folder especificado en output.
 
-`contra  scrape_contracts --input <fileWithContractLinks> --output <folderWithContractPages>`
+`python contra  scrape_contracts --input <fileWithContractLinks> --output <folderWithContractPages>`
 
 --------------
 
@@ -99,5 +99,5 @@ Dada un archivo que contiene en cada linea una url a un contrato. Descarga cada 
 
 Convierte cada pagina del folder de entrada (un contrato) a json y lo exporta a un archivo
 
-`contra  create-dataset --input <folderWithContractPages> --output <jsonFileWithContractData>`
+`python contra  create-dataset --input <folderWithContractPages> --output <jsonFileWithContractData>`
 
