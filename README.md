@@ -66,7 +66,7 @@ Cada linea del archivo contiene un objecto json. Cada objeto json tiene la sigui
 # Instalando requerimientos
 
 1. `sudo apt-get install libxml2-dev libxslt-dev python-dev zlib1g-dev`
-2. `pip install -r requierements.txt`
+2. `pip install -r requirements.txt`
  
 # Running it
 
