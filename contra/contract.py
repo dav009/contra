@@ -90,34 +90,20 @@ def parse_contract_page(page_file):
 	print("done.." + str(counter.value))
 	return contract
 
-def convert_to_single_line(page_file):
-	f = codecs.open(page_file, 'r', 'utf-8')
-	content = " ".join(f.readlines())
-	f.close()
+def export_contract_page(pair):
+	page_file = pair[0]
+	output_file = pair[1]
+	contract = parse_contract_page(page_file)
 
-	output = codecs.open(page_file, 'w', 'utf-8')
-	output.write(content+"\n")
+	output = codecs.open(output_file, 'w', 'utf-8')
+	output.write(json.dumps(contract)+"\n")
 	output.close()
 
-	global counter
-	counter.value += 1
-	print("done.." + str(counter.value) )
-
-def remove_new_lines(path_to_folder):
-	all_files_in_folder = [ path_to_folder + "/" + f for f in listdir(path_to_folder)]
-	pool = multiprocessing.Pool(100)
-	pool.map(convert_to_single_line, all_files_in_folder)
-
-def create_data_set_from_files(path_to_folder, output):
-	all_files_in_folder = [ path_to_folder + "/" + f for f in listdir(path_to_folder)]
+def create_data_set_from_files(path_to_folder, output_folder):
+	all_files_in_folder = [ (path_to_folder + "/" + f, output_folder+"/"+f) for f in listdir(path_to_folder)]
 	pool = multiprocessing.Pool(100)
 	print("parsing page files....")
-	results = pool.map(parse_contract_page, all_files_in_folder)
-	print("exporting json to output file....")
-	output = codecs.open(output, 'w', 'utf-8')
-	for result in results:
-		output.write(json.dumps(result)+"\n")
-	output.close()
+	pool.map(export_contract_page, all_files_in_folder)
 
 
 
