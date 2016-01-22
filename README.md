@@ -12,11 +12,19 @@ Este script permite:
 
 # Dataset
 
-El dataset de Contratos de Julio 2015 pesa aproximadamente 5G, contiene cerca de 1 millon de entradas esta disponible para descargar aqui:
+## Dump Enero 21 2016
 
-- [5G Julio_18_2015 Dataset Torrent](https://github.com/dav009/contra/blob/master/datos_json_contratos_gov_co.torrent?raw=true)
+El dataset de Contratos hasta enero 2016 pesa aproximadamente 7G, contiene cerca de 2 millon de entradas esta disponible para descargar aqui:
 
-- [5G Julio_18_2015 Dataset via datahub](http://datahub.io/dataset/dataset-datos-contratacion-estatal-colombia)
+- [Enero_21_2016 Dataset](http://s3.amazonaws.com/rm-open-data/contract-data-january-21-2016-cleaned.tar.gz) gracias a [@jpmarindiaz](https://twitter.com/jpmarindiaz) por hostearlo
+
+## Dump Julio 18 2015 
+
+El dataset de Contratos hasta Julio 2015 pesa aproximadamente 5G, contiene cerca de 1 millon de entradas.
+
+- [Julio_18_2015 Dataset Torrent](https://github.com/dav009/contra/blob/master/datos_json_contratos_gov_co.torrent?raw=true)
+
+- [Julio_18_2015 Dataset via datahub](http://datahub.io/dataset/dataset-datos-contratacion-estatal-colombia)
 
 Cada linea del archivo contiene un objecto json. Cada objeto json tiene la siguiente estructura:
 
