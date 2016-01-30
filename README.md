@@ -16,7 +16,8 @@ Este script permite:
 
 El dataset de Contratos hasta enero 2016 pesa aproximadamente 7G, contiene cerca de 2 millon de entradas esta disponible para descargar aqui:
 
-- [Enero_21_2016 Dataset](http://s3.amazonaws.com/rm-open-data/contract-data-january-21-2016-cleaned.tar.gz) gracias a [@jpmarindiaz](https://twitter.com/jpmarindiaz) por hostearlo
+- (1.2GB) [Enero_21_2016 Dataset](http://s3.amazonaws.com/rm-open-data/contra/contract-data-january-21-2016-cleaned.tar.gz) gracias a [jpmarindiaz](https://github.com/jpmarindiaz) por hostearlo
+- El mismo dump de Enero_21_2016 filtrado por `Tipo de Contrato = licitaciones` y en csv (~90MB) [contratos licitaciones](http://rm-open-data.s3.amazonaws.com/contra/contratos-licitaciones.csv)
 
 ## Dump Julio 18 2015 
 
