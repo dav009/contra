@@ -56,11 +56,18 @@ class ContractParser:
 			return {"name": name, "url" : url, "description": description, "publication_date": publication_date}
 		return None
 
+	def extract_contractor(self):
+		matches = CSSSelector(".subtitulos a")(self.parsed_content)
+		contractor = ""
+		for match in matches:
+			contractor = match.text.strip()
 
+		return contractor
 
 	def parse(self):
 		contract_representation = dict()
 		contract_representation['documents'] = list()
+		contract_representation['contratante'] = self.extract_contractor()
 
 		tr_tags = CSSSelector("tr")(self.parsed_content)
 		for tr_tag in tr_tags:
@@ -78,6 +85,7 @@ class ContractParser:
 				document = self.extract_doc(td_tags)
 				if document:
 					contract_representation['documents'].append(document)
+
 		return contract_representation
 
 def parse_contract_page(page_file):
